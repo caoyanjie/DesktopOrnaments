@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QTimer>
 #include <QTime>
+#include <QMouseEvent>
 
 class Clock : public QWidget
 {
@@ -35,6 +36,13 @@ private:
     const int secOffset;
     const float minOffset;
     const float hourOffset;
+
+    QPoint offset;
+
+
+protected:
+    void mousePressEvent(QMouseEvent *event);       //重写鼠标按下事件
+    void mouseMoveEvent(QMouseEvent *event);        //重写鼠标移动事件
 
 signals:
     void updateDatetime();

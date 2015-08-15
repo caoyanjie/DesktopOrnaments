@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QDesktopWidget>
+#include <QSystemTrayIcon>
+#include <QMenu>
 
 #include "clock.h"
 #include "calendar.h"
@@ -18,6 +20,15 @@ public:
 private:
     Clock *clock;
     Calendar *calendar;
+    QMenu *menu;
+//    QAction *actionCalendar;
+//    QAction *actionClock;
+
+    QSystemTrayIcon *trayIcon;
+
+private slots:
+    void hideCalendar();
+    void hideClock();
 };
 
 #endif // ORNAMENTS_H

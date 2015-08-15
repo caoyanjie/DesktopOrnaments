@@ -5,5 +5,6 @@
         <file>Images/hour.png</file>
         <file>Images/min.png</file>
         <file>Images/sec.png</file>
+        <file>Images/ok.png</file>
     </qresource>
 </RCC>

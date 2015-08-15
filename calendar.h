@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QGridLayout>
 #include <QDateTime>
+#include <QMouseEvent>
 
 class Calendar : public QWidget
 {
@@ -27,6 +28,12 @@ private:
     const int calendarHeight;
 
     void setDatetime();
+
+    QPoint offset;
+
+protected:
+    void mousePressEvent(QMouseEvent *event);       //重写鼠标按下事件
+    void mouseMoveEvent(QMouseEvent *event);        //重写鼠标移动事件
 
 signals:
 

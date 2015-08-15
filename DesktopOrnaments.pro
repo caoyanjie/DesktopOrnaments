@@ -24,5 +24,5 @@ HEADERS  += ornaments.h \
 RESOURCES += \
     pictures.qrc
 
-RC_ICONS = myicon.ico
+RC_ICONS = icon.ico
 

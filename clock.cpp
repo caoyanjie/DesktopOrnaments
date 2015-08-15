@@ -73,6 +73,24 @@ Clock::Clock(QWidget *parent) : QWidget(parent)
     timer_sec->start(1000);
 }
 
+void Clock::mousePressEvent(QMouseEvent *event)
+{
+    if (event ->button() == Qt::LeftButton)
+    {
+        offset = event ->globalPos() - pos();
+    }
+}
+
+void Clock::mouseMoveEvent(QMouseEvent *event)
+{
+    if (event ->buttons() & Qt::LeftButton)
+    {
+        QPoint temp;
+        temp = event ->globalPos() - offset;
+        move(temp);
+    }
+}
+
 void Clock::sec_timeout()
 {
     QMatrix hourMatrix;

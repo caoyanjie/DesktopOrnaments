@@ -87,6 +87,24 @@ void Calendar::setDatetime()
     }
 }
 
+void Calendar::mousePressEvent(QMouseEvent *event)
+{
+    if (event ->button() == Qt::LeftButton)
+    {
+        offset = event ->globalPos() - pos();
+    }
+}
+
+void Calendar::mouseMoveEvent(QMouseEvent *event)
+{
+    if (event ->buttons() & Qt::LeftButton)
+    {
+        QPoint temp;
+        temp = event ->globalPos() - offset;
+        move(temp);
+    }
+}
+
 void Calendar::updateDatetime()
 {
     setDatetime();
